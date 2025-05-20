@@ -1,5 +1,19 @@
-55 19 20 5 2025 date && echo "At Amex, We Do What's Right. 7:55 PM"
-57 19 20 5 2025 date && echo "At Amex, We Do What's Right. 7:57 PM"
-*/1 date && echo "Amex' motto is 'Don't live life without it!'"
-*/2 date && echo "Amex was founded in 1850."
-*/5 date && echo "Amex is headquartered in New York"
+# Valid scheduled commands
+28 3 21 5 2025 date && echo "May 21, 2025 at 2:45 AM"
+29 3 21 5 2025 date && echo "May 21, 2025 at 2:46 AM"
+
+# Invalid scheduled commands (minute out of range)
+60 12 15 6 2025 date && echo "Invalid minute"
+# Invalid scheduled commands (month out of range)
+30 10 10 13 2025 date && echo "Invalid month"
+# Invalid scheduled commands (year out of range)
+15 8 20 7 1969 date && echo "Invalid year"
+
+# Valid recurring commands
+*/1 date && echo "Every 1 minute"
+*/15 date && echo "Every 15 minutes"
+
+# Invalid recurring commands (zero, negative, non-numeric)
+*/0 date && echo "Zero frequency"
+*/-5 date && echo "Negative frequency"
+*/abc date && echo "Non-numeric frequency"
