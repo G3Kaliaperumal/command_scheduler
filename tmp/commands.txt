@@ -1,6 +1,6 @@
 # Valid scheduled commands
-48 2 21 5 2025 date && echo "May 21, 2025 at 2:45 AM"
-55 2 21 5 2025 date && echo "May 21, 2025 at 2:46 AM"
+28 3 21 5 2025 date && echo "May 21, 2025 at 2:45 AM"
+29 3 21 5 2025 date && echo "May 21, 2025 at 2:46 AM"
 
 # Invalid scheduled commands (minute out of range)
 60 12 15 6 2025 date && echo "Invalid minute"

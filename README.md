@@ -61,13 +61,13 @@ Minute Hour Day Month Year <command>
 1. **Import project:**  
    Open the project folder in IntelliJ IDEA or any IDE of your preference.
 2. **Edit your commands file:**  
-   Modify scheduled and recurring commands in `/tmp/commands.txt` located inside the project (or another file).
+   Modify scheduled and recurring commands in `tmp/commands.txt` located inside the project.
 3. **Run the scheduler:**  
    Locate `CommandScheduler.java` and run its `main` method directly from the IDE.
    By default, it reads from `tmp/commands.txt`. To use a different file, modify the path in `CommandScheduler.java`.
-4. **Output:**  
-   Command outputs are written to `<home-directory>/tmp/sample-output.txt`.
-5. **To open the sample-output.txt file:**
+4. **Output:**
+   By default, command outputs are written to `tmp/sample-output.txt` located inside the project.
+   To use a different file, modify the path in `CommandScheduler.java`.
 
 ### Assumptions
 - One-time commands with a scheduled time in the past are skipped.
