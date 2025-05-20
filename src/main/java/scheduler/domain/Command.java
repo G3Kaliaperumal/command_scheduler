@@ -3,10 +3,10 @@ package main.java.scheduler.domain;
 import main.java.scheduler.CommandExecutor;
 
 public class Command implements Runnable {
-    protected String commandText;
-    protected CommandExecutor commandExecutor;
-    protected long delayInMillis;
-    protected boolean isRecurring;
+    private final String commandText;
+    private CommandExecutor commandExecutor;
+    private final long delayInMillis;
+    private final boolean isRecurring;
 
     public Command(String commandText, long delayInMillis, boolean isRecurring) {
         this.commandText = commandText;
@@ -22,11 +22,9 @@ public class Command implements Runnable {
         return delayInMillis;
     }
 
-    public boolean getIsRecurring() {
+    public boolean isRecurring() {
         return isRecurring;
     }
-
-    public void markExecuted() {}
 
     public void setCommandExecutor(CommandExecutor executor) {
         this.commandExecutor = executor;
@@ -34,6 +32,8 @@ public class Command implements Runnable {
 
     @Override
     public void run() {
-        this.commandExecutor.execute(this);
+        if (commandExecutor != null) {
+            commandExecutor.execute(this);
+        }
     }
 }
